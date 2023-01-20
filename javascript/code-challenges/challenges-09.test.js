@@ -53,10 +53,10 @@ Write a function named checkValues that takes in an object and a value and retur
 const checkValues = (obj, value) => {
   // Solution code here...
   let flag;
-  Object.keys(obj).forEach(property => {
-    obj[property] === value ? flag = true : flag = false;
-    return flag;
-  });
+  let arr = Object.values(obj);
+  value === arr[0] ? flag = true : flag = false;
+  return flag;
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -80,6 +80,13 @@ HR has asked you to change the data to make it easier to print so that it looks 
 
 const updateNumbers = (obj) => {
   // Solution code here...
+  let newArr = [];
+  let keyArr = Object.keys(obj);
+  let valArr = Object.values(obj);
+  for (let i = 0; i < keyArr.length; i++) {
+    newArr.push(keyArr[i] + ': ' + valArr[i]);
+  }
+  return newArr;
 };
 
 
@@ -136,6 +143,8 @@ const characters = [
 const getHouses = (arr) => {
   let houses = [];
   // Solution code here...
+  let houseArr = Object.values(arr);
+  houseArr.map((house) => houses.push(house.house));
   return houses;
 };
 
