@@ -12,13 +12,9 @@ E.g. [4,2,7,5,9,2] -> 9
 ------------------------------------------------------------------------------------------------ */
 const maxInArray = (arr) => {
   // Solution code here...
-  // let max = arr.reduce((acc, val, idx) =>
-  // {
-  //   let temp = val;
-  //   temp >
-  //   return temp;
-
-  // }, 0);
+  return arr.reduce((acc, val)=>{
+    return val > acc ? val : acc;
+  });
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -162,7 +158,19 @@ hasChildrenValues(characters, 'Sansa') will return false
 
 const hasChildrenValues = (arr, character) => {
   // Solution code here...
+  let children = 0;
 
+  arr.forEach(person => {
+    if(person.name === character){
+      Object.keys(person).forEach((key, idx) => {
+        if (key === 'children'){
+          children = Object.values(person)[idx].length;
+        }
+      });
+    }
+
+  });
+  return children ? true : false;
 };
 
 /* ------------------------------------------------------------------------------------------------
