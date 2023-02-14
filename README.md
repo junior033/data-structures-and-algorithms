@@ -22,4 +22,4 @@ To run your tests
 
 Table of Contents
 
-- [Challenge 01](./javascript/arrayReverse/README.md/)
+- [Array Reverse](./javascript/arrayReverse/README.md/)
